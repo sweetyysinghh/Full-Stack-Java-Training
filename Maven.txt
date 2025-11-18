@@ -1,0 +1,41 @@
+1.Create a maven project 
+2.Create package to ensure 3 layer architecture
+ -dao //Data Access Object layer - all db related code will be here
+ - ui  //UI layer is our presentation layer - Main class
+ - service // Business Layer - All business related code will be here 
+ - utility // Helper classes will be added here 
+ - model // or entities - business data or domain data
+ - exceptions // custom exception for our app will reside here
+3.Create a POJO(Plain old java object) class in model or entities packages.
+ -create a java class add fields or properties.
+ -constructor
+ -Getter and Setter methods
+ -toString()
+ 4.Create an interface in service package. Nmae of the interface for eg.CustomerService
+  - this will have all your crud related abstract methods
+ 5.Crete an implementation classes for interface created above.
+  - for eg CustomerServiceImpl implements CustomerService
+ 6.Create an interface in dao package. Name of the interface for eg.CustomerDAO
+  - Copy all methods from CustomerService interface 
+ 7.Create an implemnatation class for interface created above 
+  -for eg CustomerDAOImpl implements CustomerDAO
+ 8.Go to CustomerService Impl all methods we need to write the logic to connect DAO layer methods.
+ -create an object of DAOImpl class
+ -Using that reference or object variable call the methods of DAO layer
+ 9.Create a DBConnectionUtil class inside the utility package 
+ -inside class create static variable for url, username , password
+ -create static method to return connection object
+ -refer the code
+ 10.Go to CustomerDAOImpl and start implementing the methods
+ --we need to get connection object 
+ --we create statement using Statement, PreparedStatement or CallableStatement methods and write the query
+ --execute the query.
+ --ResultSet we will get
+ --As per result set value you return data from the method
+ 
+11. Create QueryMapper interface in utility package to store all the queries. Here we need to create a constant(using final and static).
+  
+ 
+ 
+ 
+ 
